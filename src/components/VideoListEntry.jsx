@@ -4,13 +4,15 @@ var VideoListEntry = (props) => (
       <img className="media-object" src={props.video.snippet.thumbnails.default.url} alt="" />
     </div>
     <div className="media-body">
-      <div className="video-list-entry-title">{props.video.snippet.title}</div>
+      <div className="video-list-entry-title" onClick={() => props.onVideoTitleClick(props.video)}>{props.video.snippet.title}</div>
       <div className="video-list-entry-detail">{props.video.snippet.description}</div>
     </div>
   </div>
 );
 
-// PropTypes tell other developers what `props` a component expects
+
+//onClick={props.onVideoTitleClick(props.video)}
+// PropTypes tell other developers what `props` a component expec
 // Warnings will be shown in the console when the defined rules are violated
 VideoListEntry.propTypes = {
   video: PropTypes.object.isRequired

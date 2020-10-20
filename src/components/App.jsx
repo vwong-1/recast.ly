@@ -9,8 +9,18 @@ class App extends React.Component {
 
     // Add states here
     this.state = {
-
+      currentVideo: exampleVideoData[0],
+      videoData: exampleVideoData
     };
+
+    this.onVideoTitleClick = this.onVideoTitleClick.bind(this);
+  }
+
+  // method that changes the state of current video
+  onVideoTitleClick(video) {
+    this.setState({
+      currentVideo: video
+    });
   }
 
   render() {
@@ -23,11 +33,10 @@ class App extends React.Component {
         </nav>
         <div className="row">
           <div className="col-md-7">
-            {/* Need to input Correct Data for VideoPlayer */}
-            <VideoPlayer video={exampleVideoData}/>
+            <VideoPlayer video={this.state.currentVideo} />
           </div>
           <div className="col-md-5">
-            <VideoList videos={exampleVideoData}/>
+            <VideoList videos={this.state.videoData} onVideoTitleClick={this.onVideoTitleClick} />
           </div>
         </div>
       </div>
