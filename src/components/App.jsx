@@ -23,7 +23,8 @@ class App extends React.Component {
         </nav>
         <div className="row">
           <div className="col-md-7">
-            <VideoPlayer />
+            {/* Need to input Correct Data for VideoPlayer */}
+            <VideoPlayer video={exampleVideoData}/>
           </div>
           <div className="col-md-5">
             <VideoList videos={exampleVideoData}/>
