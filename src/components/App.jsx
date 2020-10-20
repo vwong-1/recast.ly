@@ -2,6 +2,7 @@ import Search from './Search.js';
 import VideoPlayer from './VideoPlayer.js';
 import VideoList from './VideoList.js';
 import exampleVideoData from '/src/data/exampleVideoData.js';
+import searchYouTube from '/src/lib/searchYouTube.js';
 
 class App extends React.Component {
   constructor(props) {
@@ -9,8 +10,8 @@ class App extends React.Component {
 
     // Add states here
     this.state = {
-      currentVideo: exampleVideoData[0],
-      videoData: exampleVideoData
+      currentVideo: {},
+      videoData: []
     };
 
     this.onVideoTitleClick = this.onVideoTitleClick.bind(this);
@@ -21,6 +22,10 @@ class App extends React.Component {
     this.setState({
       currentVideo: video
     });
+  }
+
+  componentDidMount() {
+    // searchYouTube('')
   }
 
   render() {
